@@ -10,3 +10,8 @@ test("a year that is a leap year", function () {
     store.dispatch(changeYear(2016));
     expect(store.getState().isLeap).toBe(true);
 });
+
+test("another year that is not a leap year", function () {
+    store.dispatch(changeYear(2011));
+    expect(store.getState().isLeap).toBe(false);
+});
