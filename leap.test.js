@@ -15,3 +15,8 @@ test("another year that is not a leap year", function () {
     store.dispatch(changeYear(2011));
     expect(store.getState().isLeap).toBe(false);
 });
+
+test("every one hundred years a leap year is dropped", function () {
+    store.dispatch(changeYear(1900));
+    expect(store.getState().isLeap).toBe(false);
+});
